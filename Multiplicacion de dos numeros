@@ -1,37 +1,33 @@
 package multiplicacion.numeros;
 
-public class MultiplicacionDeNumerosTest {
 
-	
-    public static void main(String[] args) {
-     
-        MultiplicacionDeNumeros multiplicacionDeNumeros = new MultiplicacionDeNumeros();
+	import java.util.Scanner;
 
+	public class MultiplicacionDeNumeros {
+	    public double multiplicar(double numero1, double numero2) {
+	        return numero1 * numero2;
+	    }
 
-        double[][] casosDePrueba = {
-            {5.0, 7.0, 35.0},
-            {3.5, 2.5, 8.75},
-            {-1.0, 1.0, -1.0},
-            {0.0, 5.0, 0.0},
-            {-5.0, -7.0, 35.0}
-        };
+	    public static void main(String[] args) {
+
+	        Scanner scanner = new Scanner(System.in);
 
 
-        for (double[] caso : casosDePrueba) {
-            double numero1 = caso[0];
-            double numero2 = caso[1];
-            double resultadoEsperado = caso[2];
-            double resultado = multiplicacionDeNumeros.multiplicar(numero1, numero2);
+	        System.out.print("Introduce el primer número: ");
+	        double numero1 = scanner.nextDouble();
 
- 
-            System.out.printf("Multiplicar %.1f * %.1f: esperado %.1f, obtenido %.1f%n", 
-                numero1, numero2, resultadoEsperado, resultado);
 
-            if (resultado == resultadoEsperado) {
-                System.out.println("Prueba exitosa");
-            } else {
-                System.out.println("Prueba fallida");
-            }
-        }
-    }
-}
+	        System.out.print("Introduce el segundo número: ");
+	        double numero2 = scanner.nextDouble();
+
+	        MultiplicacionDeNumeros multiplicacionDeNumeros = new MultiplicacionDeNumeros();
+
+
+	        double producto = multiplicacionDeNumeros.multiplicar(numero1, numero2);
+
+	        System.out.println("El resultado de la multiplicación es: " + producto);
+
+	        scanner.close();
+	    }
+	}
+
