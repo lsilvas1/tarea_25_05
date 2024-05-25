@@ -1,0 +1,51 @@
+package promedio.numeros;
+
+
+	import java.util.ArrayList;
+	import java.util.Scanner;
+
+	public class PromedioDeNumeros {
+	    public double calcularPromedio(ArrayList<Double> numeros) {
+	        if (numeros.isEmpty()) {
+	            return 0;
+	        }
+	        double suma = 0;
+	        for (double numero : numeros) {
+	            suma += numero;
+	        }
+	        return suma / numeros.size();
+	    }
+
+	    public static void main(String[] args) {
+	  
+	        Scanner scanner = new Scanner(System.in);
+	        ArrayList<Double> numeros = new ArrayList<>();
+
+	
+	        System.out.println("Introduce números para calcular el promedio (introduce 'fin' para terminar):");
+
+	        while (true) {
+	            String entrada = scanner.nextLine();
+	            if (entrada.equalsIgnoreCase("fin")) {
+	                break;
+	            }
+	            try {
+	                double numero = Double.parseDouble(entrada);
+	                numeros.add(numero);
+	            } catch (NumberFormatException e) {
+	                System.out.println("Entrada no válida. Por favor, introduce un número o 'fin' para terminar.");
+	            }
+	        }
+
+
+	        PromedioDeNumeros promedioDeNumeros = new PromedioDeNumeros();
+
+
+	        double promedio = promedioDeNumeros.calcularPromedio(numeros);
+
+	        System.out.println("El promedio de los números introducidos es: " + promedio);
+
+	
+	        scanner.close();
+	    }
+	}
