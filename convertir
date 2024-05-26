@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class ConversorLongitud {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa el valor: ");
+        double valor = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        System.out.print("Ingresa la unidad (pulgadas, yardas o millas): ");
+        String unidad = scanner.nextLine().toLowerCase();
+
+        double resultado = 0.0;
+
+        switch (unidad) {
+            case "pulgadas":
+                resultado = valor * 25.4;
+                break;
+            case "yardas":
+                resultado = valor * 0.9144;
+                break;
+            case "millas":
+                resultado = valor * 1.6093;
+                break;
+            default:
+                System.out.println("Unidad no válida.");
+                return;
+        }
+
+        System.out.println("Resultado: " + resultado);
+    }
+}
