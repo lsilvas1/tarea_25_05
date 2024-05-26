@@ -1,28 +1,14 @@
-import java.util.Scanner;
-
-public class MayorMenorLista {
+public class Fibonacci {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("¿Cuántos números vas a introducir?: ");
-        int num = scanner.nextInt();
+        int posicion = 20; // Cambia esta posición según tus necesidades
+        int numero = fibonacciRecursivo(posicion);
+        System.out.println("El número en la posición " + posicion + " de la sucesión de Fibonacci es: " + numero);
+    }
 
-        int mayor = Integer.MIN_VALUE; // Inicializamos con el valor mínimo posible
-        int menor = Integer.MAX_VALUE; // Inicializamos con el valor máximo posible
-
-        for (int i = 0; i < num; i++) {
-            System.out.print("Dime un número: ");
-            int numero = scanner.nextInt();
-
-            // Actualizamos el número mayor y menor
-            if (numero > mayor) {
-                mayor = numero;
-            }
-            if (numero < menor) {
-                menor = numero;
-            }
+    public static int fibonacciRecursivo(int n) {
+        if (n <= 1) {
+            return n;
         }
-
-        System.out.println("El número mayor es: " + mayor);
-        System.out.println("El número menor es: " + menor);
+        return fibonacciRecursivo(n - 1) + fibonacciRecursivo(n - 2);
     }
 }
