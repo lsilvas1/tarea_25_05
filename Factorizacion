@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Factorizacion {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingresa un número entero positivo: ");
+        int numero = scanner.nextInt();
+
+        System.out.print("Factores primos de " + numero + ": ");
+        factorizar(numero);
+    }
+
+    public static void factorizar(int num) {
+        for (int i = 2; i <= num; i++) {
+            while (num % i == 0) {
+                System.out.print(i + " ");
+                num /= i;
+            }
+        }
+    }
+}
