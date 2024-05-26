@@ -1,0 +1,7 @@
+double base = 5; //
+definir una variable 
+int exponente = 3; 
+calcular la potencia 
+double resultado = Math.pow(base, exponente);
+imprimir recultado 
+System.out.println(base + " elevado a la potencia de " + exponente + " es igual a " + resultado);
