@@ -1,15 +1,28 @@
-double numero = 1234; 
-if (numero == 0) {
-    numero++; 
+import java.util.Scanner;
+
+public class MayorMenorLista {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("¿Cuántos números vas a introducir?: ");
+        int num = scanner.nextInt();
+
+        int mayor = Integer.MIN_VALUE; // Inicializamos con el valor mínimo posible
+        int menor = Integer.MAX_VALUE; // Inicializamos con el valor máximo posible
+
+        for (int i = 0; i < num; i++) {
+            System.out.print("Dime un número: ");
+            int numero = scanner.nextInt();
+
+            // Actualizamos el número mayor y menor
+            if (numero > mayor) {
+                mayor = numero;
+            }
+            if (numero < menor) {
+                menor = numero;
+            }
+        }
+
+        System.out.println("El número mayor es: " + mayor);
+        System.out.println("El número menor es: " + menor);
+    }
 }
-int digitos = (int) (Math.floor(Math.log10(Math.abs(numero)) + 1));
-System.out.println("El número " + numero + " tiene " + digitos + " dígitos.");
-BLUCE WHILE 
-int numero = 1234; 
-int digitos = 0;
-int num = numero;
-while (num != 0) {
-    num = num / 10;
-    digitos++;
-}
-System.out.println("El número " + numero + " tiene " + digitos + " dígitos.");
