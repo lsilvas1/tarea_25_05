@@ -1,0 +1,15 @@
+double numero = 1234; 
+if (numero == 0) {
+    numero++; 
+}
+int digitos = (int) (Math.floor(Math.log10(Math.abs(numero)) + 1));
+System.out.println("El número " + numero + " tiene " + digitos + " dígitos.");
+BLUCE WHILE 
+int numero = 1234; 
+int digitos = 0;
+int num = numero;
+while (num != 0) {
+    num = num / 10;
+    digitos++;
+}
+System.out.println("El número " + numero + " tiene " + digitos + " dígitos.");
