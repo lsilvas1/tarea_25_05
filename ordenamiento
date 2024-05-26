@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class OrdenaNumeros {
+    public static void main(String[] args) {
+        List<Integer> lista = new ArrayList<>();
+        lista.add(5);
+        lista.add(7);
+        lista.add(3);
+
+        // Ordenar la lista de menor a mayor
+        Collections.sort(lista);
+
+        // Imprimir los números ordenados
+        for (Integer numero : lista) {
+            System.out.println(numero);
+        }
+    }
+}
