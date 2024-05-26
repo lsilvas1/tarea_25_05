@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Palindromo {
+    public static void main(String[] args) {
+        Scanner sn = new Scanner(System.in);
+        sn.useDelimiter("\\n");
+
+        System.out.println("Escribe una palabra: ");
+        String palabra = sn.next().toLowerCase();
+
+        if (esPalindromo(palabra)) {
+            System.out.println("¡Es un palíndromo!");
+        } else {
+            System.out.println("No es un palíndromo.");
+        }
+    }
+
+    public static boolean esPalindromo(String cadena) {
+        // Eliminar espacios, comas y convertir a minúsculas
+        cadena = cadena.replaceAll("[ ,]", "").toLowerCase();
+
+        // Invertir la cadena
+        String cadenaInvertida = invertirCadena(cadena);
+
+        // Comprobar si es igual al invertirla
+        return cadena.equals(cadenaInvertida);
+    }
+
+    public static String invertirCadena(String cadena) {
+        StringBuilder invertida = new StringBuilder();
+        for (int i = cadena.length() - 1; i >= 0; i--) {
+            invertida.append(cadena.charAt(i));
+        }
+        return invertida.toString();
+    }
+}
