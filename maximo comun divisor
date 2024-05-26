@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class MaximoComunDivisor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresa el primer número:");
+        int num1 = scanner.nextInt();
+        System.out.println("Ingresa el segundo número:");
+        int num2 = scanner.nextInt();
+
+        int mcd = calcularMCDRecursivo(num1, num2);
+        System.out.println("El Máximo Común Divisor de " + num1 + " y " + num2 + " es: " + mcd);
+    }
+
+    public static int calcularMCDRecursivo(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return calcularMCDRecursivo(b, a % b);
+    }
+}
